@@ -1,12 +1,12 @@
 export default (matrix, size) => {
-  const cellSize = size / matrix.length
+  const cellSize = size / matrix.length - 0.1
   let path = ''
   matrix.forEach((row, i) => {
     let needDraw = false
     row.forEach((column, j) => {
       if (column) {
         if (!needDraw) {
-          path += `M${cellSize * j} ${cellSize / 2 + cellSize * i} `
+          path += `M${cellSize * j + 6} ${cellSize / 2 + cellSize * i}`
           needDraw = true
         }
         if (needDraw && j === matrix.length - 1) {
